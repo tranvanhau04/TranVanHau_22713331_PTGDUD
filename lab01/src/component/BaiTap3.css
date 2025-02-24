@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(37, 34, 34);
+}
+h1{
+    color: white;
+    
+}
+span{
+    color: white;
+    font-size: 20px;
+}
+input{
+    font-size: 20px;
+    margin-top: 20px;
+}
+#number1{
+    width: 300px;
+    height: 20px;
+}
+#number2{
+    width: 300px;
+    height: 20px;
+}
+button{
+    background-color: aqua;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+#kq{
+    font-size: 30px;
+}

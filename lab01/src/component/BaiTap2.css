@@ -1,0 +1,26 @@
+body {
+    background-color: rgba(27, 24, 24, 0.884);
+  }
+input{
+  background-color: gray;
+  color: white;
+  width: 300px;
+  height: 20px;
+  margin-top: 20px;
+}  
+button{
+    background-color: blue;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+h1{
+  color: white;
+}
+span{
+  color: white;
+}
+#kq{
+  font-size: 30px;
+} 
