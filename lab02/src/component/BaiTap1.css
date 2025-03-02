@@ -1,0 +1,150 @@
+header {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 60px; /* Đặt chiều cao cố định */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Căn đều các phần tử */
+    padding: 10px 20px;
+    background-color: #f8f9fa; /* Màu nền */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    
+    position: fixed; /* Giữ cố định ở đầu trang */
+    top: 30px;
+    left: 0;
+    z-index: 1000; /* Đảm bảo header luôn ở trên cùng */
+}
+
+header img {
+    height: 40px; /* Chỉnh kích thước ảnh */
+    
+}
+
+header input {
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    margin-left: 10px;
+}
+
+header a:hover {
+    color: rgb(235, 113, 134); /* Màu xanh khi hover */
+}
+header h1{
+    color: rgb(235, 113, 134);
+}
+#logo{
+    display: flex;
+}
+#logo img{
+    height: 50px;
+}
+#menu{
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+#search{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+#search input{
+    width: 300px;
+    height: 50px;
+    border: none;
+    outline: none;
+}
+#search input:hover{
+    background-color: rgb(240, 137, 154);
+    color: white;
+}
+#box{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+#box input{
+    width: 200px;
+    height: 60px;
+    border: none;
+    outline: none;
+}
+#box input:hover{
+    background-color: rgb(240, 137, 154);
+    color: white;
+}
+#box input::placeholder{
+    color: rgb(235, 113, 134);
+}
+#user img{
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+}
+main{
+    width: 100%;
+    height: 800px;
+ 
+    align-items: center;
+    justify-content: space-between; /* Căn đều các phần tử */
+    padding: 10px 20px;
+    background-color: #f8f9fa; /* Màu nền */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    
+}
+#left {
+    width: 600px; /* Định kích thước sidebar */
+    height: 800px; /* Chiều cao full màn hình */
+    
+    
+    position: absolute;
+    top: 90px; /* Dưới header (60px + 30px) */
+    left: 0; /* Sát lề trái */
+    
+    
+    
+}
+#left img{
+    width: 600px;
+    height: 800px;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+/* Đảm bảo nội dung bên phải không bị che */
+#right {
+    width: 1000px; /* Định kích thước sidebar */
+    height: 800px; /* Chiều cao full màn hình */
+    margin-left: 350px; /* Chiều rộng sidebar */
+    margin-top: 150px;
+}
+
+#list{
+    display: flex;
+    align-items: center;
+    margin-left: 190px;
+    margin-top: 40px;
+}
+#list a{
+   margin-left: 60px;
+    text-decoration: none;
+}
+
+footer{
+    width: 100%;
+    height: 400px;
+    margin-top: 300px;
+    position: absolute;
+    left: 0;
+}
+footer img{
+    width: 100%;
+    height: 400px;
+}
