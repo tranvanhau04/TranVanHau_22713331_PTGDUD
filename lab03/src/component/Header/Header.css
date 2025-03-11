@@ -1,0 +1,13 @@
+.navbar-nav .nav-item .nav-link {
+    transition: all 0.3s ease-in-out;
+    color: #666; /* Màu chữ mặc định */
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #c92424 !important; /* Màu chữ khi hover */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 20px;
+}

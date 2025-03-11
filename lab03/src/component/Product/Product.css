@@ -1,0 +1,123 @@
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .product-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .btn-pink {
+    background-color: #ff5c8d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-pink:hover {
+    background-color: #e74c7b;
+  }
+  
+  .tab-menu {
+    display: flex;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .tab-menu button {
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s, border-bottom 0.3s;
+  }
+  
+  .tab-menu button.active {
+    color: #ff5c8d;
+    border-bottom: 3px solid #ff5c8d;
+  }
+  
+  .container {
+    position: absolute;
+    width: 100%;
+    max-width: 1400px;
+    top: 60px;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .username-overlay {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+  }
+  
+  .recipe-box {
+    margin-top: 70px;
+  }
+  
+  .recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; /* Khoảng cách giữa các card */
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+   
+}
+
+
+
+.recipe-card {
+    height: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+   
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+
+.recipe-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 10px;
+    
+}
+.recipe-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+.bookmark-icon {
+    color: #ff4d4d;
+    font-size: 18px;
+    cursor: pointer;
+}
