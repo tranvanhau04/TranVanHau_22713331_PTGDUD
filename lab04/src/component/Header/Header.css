@@ -1,3 +1,14 @@
+.navbar-nav {
+    margin-left: 0 !important; /* Xóa khoảng cách bên trái */
+    padding-left: 0; /* Đảm bảo không có padding */
+    display: flex;
+    justify-content: flex-start; /* Căn menu về phía bên trái */
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px; /* Tạo khoảng cách giữa các mục menu */
+}
+
 .navbar-nav .nav-item .nav-link {
     transition: all 0.3s ease-in-out;
     color: #666; /* Màu chữ mặc định */
@@ -10,4 +21,30 @@
     text-decoration: none;
     border-radius: 8px;
     font-size: 20px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    transition: all 0.3s ease-in-out;
+    color: #666; /* Màu chữ mặc định */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px; /* Kích thước chữ mặc định */
+}
+
+/* Hover Effect */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #c92424 !important; /* Màu chữ khi hover */
+    text-decoration: none;
+    font-size: 18px; /* Tăng nhẹ kích thước khi hover */
+    background-color: rgba(201, 36, 36, 0.1); /* Hiệu ứng nền khi hover */
+    padding: 12px 18px; /* Điều chỉnh padding để không bị giật */
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Thêm hiệu ứng khi active */
+.navbar-nav .nav-item .nav-link.active {
+    color: #c92424 !important;
+    font-weight: bold;
+    border-bottom: 2px solid #c92424; /* Gạch chân khi active */
 }
