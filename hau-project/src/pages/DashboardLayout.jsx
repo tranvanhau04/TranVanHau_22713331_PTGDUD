@@ -1,9 +1,9 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import Topbar from './Topbar';
-import OverviewCards from './OverviewCards';
-import DataTable from './DataTable';
-import Pagination from './Pagination';
+import Sidebar from '../component/Sidebar';
+import Topbar from '../component/Topbar';
+import OverviewCards from '../component/OverviewCards';
+import DataTable from '../component/DataTable';
+import Pagination from '../component/Pagination';
 
 const DashboardLayout = () => {
   return (

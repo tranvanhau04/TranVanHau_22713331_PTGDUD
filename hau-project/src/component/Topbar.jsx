@@ -1,11 +1,24 @@
 import React from 'react';
 import { Bell, HelpCircle, Search } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+
+const pathToTitle = {
+  '/dashboard': 'Dashboard',
+  '/projects': 'Projects',
+  '/teams': 'Teams',
+  '/analytics': 'Analytics',
+  '/messages': 'Messages',
+  '/integrations': 'Integrations',
+};
 
 const Topbar = () => {
+  const location = useLocation();
+  const title = pathToTitle[location.pathname] || 'Dashboard';
+
   return (
     <div className="flex justify-between items-center py-4 px-6 border-b bg-white">
       {/* Left: Title */}
-      <h1 className="text-xl font-bold text-pink-600">Dashboard</h1>
+      <h1 className="text-xl font-bold text-pink-600">{title}</h1>
 
       {/* Center: Search Bar */}
       <div className="flex items-center bg-gray-100 px-3 py-2 rounded-md w-80">
