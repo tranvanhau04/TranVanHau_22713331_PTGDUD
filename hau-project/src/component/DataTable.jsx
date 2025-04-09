@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
-import { Pencil } from "lucide-react";
+import { Pencil, X } from "lucide-react";
 
 const getStatusStyle = (status) => {
   switch (status) {
@@ -18,13 +18,13 @@ const getStatusStyle = (status) => {
 const CustomDataTable = () => {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editUser, setEditUser] = useState(null);
 
   useEffect(() => {
-    
     fetch("/data/db.json")
       .then((res) => res.json())
       .then((data) => {
-        setCustomers(data.customers); // đảm bảo dữ liệu đúng key
+        setCustomers(data.customers);
         setLoading(false);
       })
       .catch((err) => {
@@ -32,6 +32,16 @@ const CustomDataTable = () => {
         setLoading(false);
       });
   }, []);
+
+  const handleEditChange = (field, value) => {
+    setEditUser((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSave = () => {
+    const updated = customers.map((c) => (c.id === editUser.id ? editUser : c));
+    setCustomers(updated);
+    setEditUser(null);
+  };
 
   const columns = [
     {
@@ -72,7 +82,11 @@ const CustomDataTable = () => {
           <span className={`text-xs px-3 py-1 rounded-full ${getStatusStyle(row.status)}`}>
             {row.status}
           </span>
-          <Pencil size={16} className="text-gray-400 hover:text-gray-600 cursor-pointer ml-2" />
+          <Pencil
+            size={16}
+            className="text-gray-400 hover:text-gray-600 cursor-pointer ml-2"
+            onClick={() => setEditUser(row)}
+          />
         </div>
       ),
     },
@@ -118,6 +132,83 @@ const CustomDataTable = () => {
         striped
         className="rounded-lg shadow"
       />
+
+      {/* Edit Modal */}
+      {editUser && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+    <div className="bg-white rounded-2xl shadow-2xl w-[400px] max-w-full p-6 relative pointer-events-auto animate-fade-in">
+      {/* Close button */}
+      <button
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+        onClick={() => setEditUser(null)}
+      >
+        <X size={20} />
+      </button>
+
+      {/* Modal Title */}
+      <h2 className="text-lg font-bold mb-5 text-gray-800 text-center">
+        ✏️ Edit Customer
+      </h2>
+
+      {/* Input fields */}
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Customer Name</label>
+          <input
+            type="text"
+            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            value={editUser.customerName}
+            onChange={(e) => handleEditChange("customerName", e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+          <input
+            type="text"
+            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            value={editUser.company}
+            onChange={(e) => handleEditChange("company", e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Order Value</label>
+          <input
+            type="number"
+            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            value={editUser.value}
+            onChange={(e) => handleEditChange("value", e.target.value)}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Order Date</label>
+          <input
+            type="date"
+            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            value={editUser.date.split("T")[0]}
+            onChange={(e) => handleEditChange("date", e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex justify-end gap-2 mt-6">
+        <button
+          onClick={() => setEditUser(null)}
+          className="px-4 py-2 text-sm border rounded-lg hover:bg-gray-100"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={handleSave}
+          className="px-4 py-2 text-sm bg-pink-500 text-white rounded-lg hover:bg-pink-600"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
