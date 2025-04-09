@@ -17,19 +17,26 @@ const getStatusStyle = (status) => {
 
 const CustomDataTable = () => {
   const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    
     fetch("/data/db.json")
       .then((res) => res.json())
       .then((data) => {
-        setCustomers(data.customers);
+        setCustomers(data.customers); // đảm bảo dữ liệu đúng key
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch customers:", err);
+        setLoading(false);
       });
   }, []);
 
   const columns = [
     {
       name: "",
-      cell: (row) => <input type="checkbox" />,
+      cell: () => <input type="checkbox" />,
       width: "60px",
     },
     {
@@ -70,15 +77,17 @@ const CustomDataTable = () => {
       ),
     },
   ];
+
   const customStyles = {
     rows: {
       style: {
-        minHeight: "64px", // 👈 tăng chiều cao mỗi row
+        minHeight: "64px",
         paddingTop: "12px",
         paddingBottom: "12px",
       },
     },
   };
+
   return (
     <div className="p-4">
       {/* Header */}
@@ -104,7 +113,7 @@ const CustomDataTable = () => {
         columns={columns}
         data={customers}
         customStyles={customStyles}
-        // pagination
+        progressPending={loading}
         highlightOnHover
         striped
         className="rounded-lg shadow"
