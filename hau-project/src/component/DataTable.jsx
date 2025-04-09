@@ -21,10 +21,10 @@ const CustomDataTable = () => {
   const [editUser, setEditUser] = useState(null);
 
   useEffect(() => {
-    fetch("/data/db.json")
+    fetch("https://67f61a66913986b16fa6b21d.mockapi.io/user")
       .then((res) => res.json())
       .then((data) => {
-        setCustomers(data.customers);
+        setCustomers(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -32,16 +32,40 @@ const CustomDataTable = () => {
         setLoading(false);
       });
   }, []);
+  
 
   const handleEditChange = (field, value) => {
     setEditUser((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSave = () => {
-    const updated = customers.map((c) => (c.id === editUser.id ? editUser : c));
-    setCustomers(updated);
-    setEditUser(null);
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`https://67f61a66913986b16fa6b21d.mockapi.io/user/${editUser.id}`, {
+
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editUser),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to update customer");
+      }
+  
+      const updatedUser = await response.json();
+  
+      // Cập nhật state với dữ liệu từ API trả về
+      setCustomers((prev) =>
+        prev.map((c) => (c.id === updatedUser.id ? updatedUser : c))
+      );
+      setEditUser(null);
+    } catch (err) {
+      console.error(err);
+      alert("Error updating user");
+    }
   };
+  
 
   const columns = [
     {
@@ -156,7 +180,7 @@ const CustomDataTable = () => {
           <label className="block text-sm font-medium text-gray-700 mb-1">Customer Name</label>
           <input
             type="text"
-            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            className="w-full bg-pink-50 border px-4 py-2 text-black rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
             value={editUser.customerName}
             onChange={(e) => handleEditChange("customerName", e.target.value)}
           />
@@ -165,7 +189,7 @@ const CustomDataTable = () => {
           <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
           <input
             type="text"
-            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            className="w-full bg-pink-50 border px-4 py-2 text-black rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
             value={editUser.company}
             onChange={(e) => handleEditChange("company", e.target.value)}
           />
@@ -174,7 +198,7 @@ const CustomDataTable = () => {
           <label className="block text-sm font-medium text-gray-700 mb-1">Order Value</label>
           <input
             type="number"
-            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            className="w-full bg-pink-50 border px-4 py-2 text-black rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
             value={editUser.value}
             onChange={(e) => handleEditChange("value", e.target.value)}
           />
@@ -183,7 +207,7 @@ const CustomDataTable = () => {
           <label className="block text-sm font-medium text-gray-700 mb-1">Order Date</label>
           <input
             type="date"
-            className="w-full bg-pink-50 border px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
+            className="w-full bg-pink-50 border px-4 py-2 text-black rounded-lg text-sm focus:ring-2 focus:ring-pink-400 outline-none"
             value={editUser.date.split("T")[0]}
             onChange={(e) => handleEditChange("date", e.target.value)}
           />
