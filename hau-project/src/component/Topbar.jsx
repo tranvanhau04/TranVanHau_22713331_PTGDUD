@@ -16,9 +16,9 @@ const Topbar = () => {
   const title = pathToTitle[location.pathname] || 'Dashboard';
 
   return (
-    <div className="flex justify-between items-center py-4 px-6 border-b bg-gray-100">
-      <h1>Header</h1>
-      {/* <h1 className="text-xl font-bold text-pink-600">{title}</h1>
+    <div className="flex justify-between items-center py-4 px-6 border-b bg-white">
+      
+      <h1 className="text-xl font-bold text-pink-600">{title}</h1>
 
      
       <div className="flex items-center bg-gray-100 px-3 py-2 rounded-md w-80">
@@ -39,7 +39,7 @@ const Topbar = () => {
           alt="avatar"
           className="w-8 h-8 rounded-full"
         />
-      </div> */}
+      </div>
     </div>
   );
 };

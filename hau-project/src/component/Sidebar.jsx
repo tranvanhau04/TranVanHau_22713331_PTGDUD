@@ -20,9 +20,9 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 h-screen bg-blue-100 flex flex-col justify-between border-r p-4">
-       <h1>Sidebar</h1>
-      {/* <div>
+    <aside className="w-64 h-screen bg-white flex flex-col justify-between border-r p-4">
+    
+      <div>
        
         <div className="flex items-center gap-2 mb-8 px-2">
           <img src="./Image 1858.png" alt="Logo" />
@@ -59,7 +59,7 @@ const Sidebar = () => {
         <button className="mt-1 w-full h-10 px-6 py-1 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 text-sm">
           Try now
         </button>
-      </div> */}
+      </div>
     </aside>
   );
 };

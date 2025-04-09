@@ -77,9 +77,8 @@ const OverviewCards = () => {
   };
 
   return (
-    <div className="mb-6 bg-black h-30">
-      <h1>Card</h1>
-      {/* <div className="flex items-center gap-2 mb-4">
+    <div className="mb-6">
+      <div className="flex items-center gap-2 mb-4">
         <img src="./Squares four 1.png" alt="Overview Icon" className="w-5 h-5" />
         <h2 className="text-lg font-semibold text-black">Overview</h2>
       </div>
@@ -206,7 +205,7 @@ const OverviewCards = () => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

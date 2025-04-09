@@ -127,9 +127,9 @@ const CustomDataTable = () => {
   };
 
   return (
-    <div className="p-4 bg-red-100 h-140">
-     <h1>Table</h1>
-      {/* <div className="flex items-center justify-between mb-4">
+    <div className="p-4">
+     
+      <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2 p-4">
           <img src="./File text 1.png" alt="icon" />
           <h2 className="text-lg font-semibold text-black">Detailed report</h2>
@@ -231,7 +231,7 @@ const CustomDataTable = () => {
       </div>
     </div>
   </div>
-)} */}
+)}
 
     </div>
   );
