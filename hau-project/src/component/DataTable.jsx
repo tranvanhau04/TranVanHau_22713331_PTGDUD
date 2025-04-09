@@ -127,9 +127,9 @@ const CustomDataTable = () => {
   };
 
   return (
-    <div className="p-4">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+    <div className="p-4 bg-red-100 h-140">
+     <h1>Table</h1>
+      {/* <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2 p-4">
           <img src="./File text 1.png" alt="icon" />
           <h2 className="text-lg font-semibold text-black">Detailed report</h2>
@@ -146,7 +146,7 @@ const CustomDataTable = () => {
         </div>
       </div>
 
-      {/* DataTable */}
+     
       <DataTable
         columns={columns}
         data={customers}
@@ -157,11 +157,11 @@ const CustomDataTable = () => {
         className="rounded-lg shadow"
       />
 
-      {/* Edit Modal */}
+     
       {editUser && (
   <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
     <div className="bg-white rounded-2xl shadow-2xl w-[400px] max-w-full p-6 relative pointer-events-auto animate-fade-in">
-      {/* Close button */}
+   
       <button
         className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
         onClick={() => setEditUser(null)}
@@ -169,12 +169,12 @@ const CustomDataTable = () => {
         <X size={20} />
       </button>
 
-      {/* Modal Title */}
+    
       <h2 className="text-lg font-bold mb-5 text-gray-800 text-center">
         ✏️ Edit Customer
       </h2>
 
-      {/* Input fields */}
+    
       <div className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Customer Name</label>
@@ -214,7 +214,7 @@ const CustomDataTable = () => {
         </div>
       </div>
 
-      {/* Buttons */}
+   
       <div className="flex justify-end gap-2 mt-6">
         <button
           onClick={() => setEditUser(null)}
@@ -231,7 +231,7 @@ const CustomDataTable = () => {
       </div>
     </div>
   </div>
-)}
+)} */}
 
     </div>
   );

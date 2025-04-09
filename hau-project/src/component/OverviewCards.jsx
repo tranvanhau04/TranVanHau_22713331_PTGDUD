@@ -77,8 +77,9 @@ const OverviewCards = () => {
   };
 
   return (
-    <div className="mb-6">
-      <div className="flex items-center gap-2 mb-4">
+    <div className="mb-6 bg-black h-30">
+      <h1>Card</h1>
+      {/* <div className="flex items-center gap-2 mb-4">
         <img src="./Squares four 1.png" alt="Overview Icon" className="w-5 h-5" />
         <h2 className="text-lg font-semibold text-black">Overview</h2>
       </div>
@@ -106,7 +107,7 @@ const OverviewCards = () => {
         ))}
       </div>
 
-      {/* Modal thêm customer (không có nền đen) */}
+      
       {showModal && (
         <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white rounded-2xl shadow-2xl w-[400px] max-w-full p-6 relative animate-fade-in">
@@ -205,7 +206,7 @@ const OverviewCards = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

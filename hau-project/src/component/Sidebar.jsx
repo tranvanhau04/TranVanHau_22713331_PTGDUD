@@ -20,15 +20,15 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 h-screen bg-white flex flex-col justify-between border-r p-4">
-      {/* Top: Logo + Menu */}
-      <div>
-        {/* Logo */}
+    <aside className="w-64 h-screen bg-blue-100 flex flex-col justify-between border-r p-4">
+       <h1>Sidebar</h1>
+      {/* <div>
+       
         <div className="flex items-center gap-2 mb-8 px-2">
           <img src="./Image 1858.png" alt="Logo" />
         </div>
 
-        {/* Menu */}
+       
         <nav className="flex flex-col gap-2">
           {menuItems.map((item, index) => (
             <NavLink
@@ -46,7 +46,7 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      {/* Bottom: Promo */}
+      
       <div className="bg-blue-50 rounded-lg text-center mt-1 p-4">
         <img
           src="./Group.png"
@@ -59,7 +59,7 @@ const Sidebar = () => {
         <button className="mt-1 w-full h-10 px-6 py-1 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 text-sm">
           Try now
         </button>
-      </div>
+      </div> */}
     </aside>
   );
 };
