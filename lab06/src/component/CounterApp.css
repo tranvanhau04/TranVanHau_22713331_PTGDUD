@@ -1,0 +1,40 @@
+/* src/components/CounterApp.css */
+
+.counter-container {
+    text-align: center;
+    padding: 40px;
+    background: #f0f4f8;
+    border-radius: 12px;
+    width: 300px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .count-display {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #333;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .button-group button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .button-group button:hover {
+    background-color: #0056b3;
+  }
+  
